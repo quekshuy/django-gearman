@@ -46,7 +46,8 @@ class DjangoGearmanClient(gearman.GearmanClient):
             data["args"] = args
         
         data["kwargs"].update(karguments)
-        data["kwargs"].update(kwargs)
+        if kwargs and isinstance(kwargs, dict):
+            data["kwargs"].update(kwargs)
         
         return data        
 

@@ -8,13 +8,13 @@ import time
 from django_gearman.decorators import gearman_job
 
 
-@gearman_job
+@gearman_job()
 def reverse(input):
     """Reverse a string"""
     print "[%s] Reversing string: %s" % (os.getpid(), input)
     return input[::-1]
 
-@gearman_job
+@gearman_job()
 def background_counting(arg=None):
     """
     Do some incredibly useful counting to 5

@@ -159,17 +159,8 @@ queue:
 Be aware of the fact that when you don't specify the queue name, the worker
 will take care of all tasks.
 
-Clients
+Background Tasks
 -------
-To make your workers work, you need a client app passing data to them. Create
-and instance of the `django_gearman.GearmanClient` class and execute a
-`django_gearman.Task` with it:
-
-    from django_gearman import GearmanClient, Task
-    client = GearmanClient()
-    res = client.do_task(Task("gearman_example.reverse", sentence))
-    print "Result: '%s'" % res
-
 The notation for the task name is `appname.jobname`, no matter what pattern
 you have defined in `GEARMAN_JOB_NAME`.
 
